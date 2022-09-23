@@ -1,0 +1,26 @@
+package chap03;
+
+import java.util.Scanner;
+
+// 2022. 9. 23. 20:45 김철희
+
+public class Test3_4 { // 128p 문제풀이
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		//while (true) {
+			System.out.println("연필 개수를 입력하시오.");
+			double pensil = scanner.nextDouble();
+			System.out.println("학생 수를 입력하시오.");
+			double student = scanner.nextDouble();
+
+			double pensilperstudent = pensil / student;
+			System.out.println("한 학생당 연필 개수는 " + pensilperstudent + "개입니다.");
+			double pensilleft = pensil % student;
+			System.out.println("남은 연필 개수는 " + pensilleft + "개입니다.");
+
+		//}
+	}
+
+}
