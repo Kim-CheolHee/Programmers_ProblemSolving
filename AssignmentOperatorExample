@@ -1,0 +1,21 @@
+		Scanner a = new Scanner(System.in);
+		System.out.println("숫자 하나를 입력하시오.");
+		int b = a.nextInt();
+
+		b &= 10;
+		System.out.println("result=" + b);
+
+		b += 10; 
+		System.out.println("result=" + b);
+
+		b -= 5;
+		System.out.println("result=" + b);
+
+		b *= 3;
+		System.out.println("result=" + b);
+
+		b /= 5;
+		System.out.println("result=" + b);
+
+		b %= 3;
+		System.out.println("result=" + b);
