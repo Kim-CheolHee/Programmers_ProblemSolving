@@ -1,0 +1,8 @@
+		Scanner a = new Scanner(System.in);
+		System.out.println("점수를 입력하시오.");
+
+		while (true) {
+			int score = a.nextInt();
+			char grade = (score > 90) ? 'A' : ((score > 80) ? 'B' : 'C');
+			System.out.println(score + "점은 " + grade + "등급입니다.");
+		}
