@@ -1,0 +1,43 @@
+  ○ Q1, Q2) 짝수, 홀수
+		System.out.print("정수 하나 입력 : ");
+		int b = sc.nextInt();
+		b = b % 7;
+		System.out.print("입력한 정수가 짝수인가요?");
+		System.out.println((b%2)==0);
+		System.out.print("입력한 정수가 홀수인가요?");
+		System.out.println((b%2)!=0); // 비교연산자
+		System.out.println(!((b%2)==0)); // 논리부정연산자
+
+		if (b == 0) {
+			System.out.println("7의 배수.");
+		} else {
+			System.out.println("7의 배수 아님.");
+		}
+  ○ Q3. 합계 및 평균
+		System.out.print("Java 점수 입력 :____");
+		double Java = sc.nextInt();
+		System.out.print("Python 점수 입력 :____");
+		double Python = sc.nextInt();
+		System.out.print("데이터베이스 점수 입력 :____");
+		double Db = sc.nextInt();
+
+		double p = (Java + Python + Db) / 3;
+		//double p = Double.parseDouble();
+		System.out.println("합계 : " + (Java + Python + Db));
+		System.out.println("평균 : " + p);
+  ○ Q4. 3자리 수 중 백의 자리 이하 버리기
+		System.out.print("십의자리 이하 버릴 숫자를 입력하시오 : ");
+		int num = sc.nextInt();
+		int a = num - (num % 100); // int a = (num/100)*100
+		System.out.println("입력한 숫자 : " + num);
+		System.out.println("입력한 숫자에서 십의 자리 이하를 버린 수 : " + a);
+  ○ Q5. 일의 자리를 1로 바꾸는 코드.
+		System.out.print("숫자를 입력하시오 : ");
+		int num = sc.nextInt();
+		int a = num / 10 * 10 + 1; // int로 계산하면 소수점 이하는 없어지는 걸 유념하고 계산.
+		System.out.println("출력 : " + a);
+  ○ Q6. 배수 삼항 연산자
+		System.out.print("정수입력 : ______");
+		int num = sc.nextInt();
+		String result = (num % 5 == 0) ? num + " 은(는) 5의 배수 입니다." : num + " 은(는) 5의 배수가 아닙니다.";
+		System.out.println(result);
