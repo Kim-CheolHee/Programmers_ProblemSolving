@@ -1,0 +1,60 @@
+package HomeWork;
+
+import java.util.Scanner;
+
+// 2022. 10. 2. 10:03 김철희
+
+public class Quiz5 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("당신의 군번을 입력하세요 : ");
+		String Gnum = sc.nextLine();
+		char Year = Gnum.charAt(0);
+		char Month = Gnum.charAt(1);
+		char Status = Gnum.charAt(3);
+		char O1 = Gnum.charAt(4);
+		char O2 = Gnum.charAt(5);
+		char O3 = Gnum.charAt(6);
+		char O4 = Gnum.charAt(7);
+		String YM = String.valueOf(Year) + String.valueOf(Month);
+		String Officer = String.valueOf(Status) + String.valueOf(O1) + String.valueOf(O2) + String.valueOf(O3)
+				+ String.valueOf(O4);
+		int OfficerInt = Integer.parseInt(Officer);
+
+		if (Gnum.length() == 8 && Gnum.length() > 0 && Status == '1') {
+			if (OfficerInt >= 10001 && OfficerInt <= 10300) {
+				System.out.println("당신은 " + YM + "년에 입대한 사관학교 출신 장교입니다.");
+			} else if (OfficerInt >= 10401 && OfficerInt <= 11000) {
+				System.out.println("당신은 " + YM + "년에 입대한 육군3사관학교 출신 장교입니다.");
+			} else if (OfficerInt >= 11001 && OfficerInt <= 16000) {
+				System.out.println("당신은 " + YM + "년에 입대한 학군사관 출신 장교입니다.");
+			} else if (OfficerInt >= 16001 && OfficerInt <= 17000) {
+				System.out.println("당신은 " + YM + "년에 입대한 학사사관 출신 장교입니다.");
+			} else if (OfficerInt >= 17001 && OfficerInt <= 17050) {
+				System.out.println("당신은 " + YM + "년에 입대한 간부사관 출신 장교입니다.");
+			}
+		} else if (Gnum.length() == 9 && Gnum.length() > 0 && Status == '5') {
+			System.out.println("당신은 " + YM + "년에 입대한 부사관입니다.");
+		} else if (Gnum.length() == 11 && Gnum.length() > 0 && Status == '7') {
+			switch (O1) {
+			case '1':
+				System.out.println("당신은 " + YM + "년에 입대한 육군지상작전사령부(구 1군사령부) 예하 신병교육대 출신 용사입니다.");
+				break;
+			case '2':
+				System.out.println("당신은 " + YM + "년에 입대한 육군제2작전사령부 예하 신병교육대 출신 용사입니다.");
+				break;
+			case '3':
+				System.out.println("당신은 " + YM + "년에 입대한 육군지상작전사령부(구 3군사령부) 예하 신병교육대 출신 용사입니다.");
+				break;
+			case '6':
+				System.out.println("당신은 " + YM + "년에 입대한 육군훈련소 출신 용사입니다.");
+				break;
+			default:
+				System.out.println("존재하지 않는 군번입니다.");
+			}
+		} else {
+			System.out.println("존재하지 않는 군번입니다.");
+		}
+	}
+}
