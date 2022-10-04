@@ -1,0 +1,65 @@
+package sec02.exam01;
+
+import java.util.Scanner;
+
+public class D221004_01_반복문_for2 {
+
+	public static void main(String[] args) {
+
+		// Q1) 5 ~ 14 까지의 합을 구하기
+		int sum = 0;
+		int a = 5;
+		for (a = 5; a <= 14; ++a) {
+			sum += a;
+			System.out.println(a);
+		}
+		System.out.println("5 ~ 14까지의 합 : " + sum);
+
+		// Q2) 100 ~ 80 까지 출력하기
+		for (int i = 100; i >= 80; --i) {
+			System.out.println(i);
+		}
+
+		// Q3)정수 2개를 키보드로 입력받아 두 수 사이의 모든 수의 합계를 구하는 코드를 작성하시오.
+		 ex) 7, 10 을 입력했다면 7 + 8 + 9 + 10을 한 결과값인 34 가 나와야 함.
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 입력 : ");
+		int a = sc.nextInt();
+		System.out.print("정수 입력 : ");
+		int b = sc.nextInt();
+		int result = 0;
+
+		for (int i = a; i <= b; ++i) {
+			result += i;
+		}
+		System.out.println("a ~ b까지의 합 : " + result);
+
+		 if + for 문 활용
+		if (a <= b) {
+			for (int i = a; i <= b; ++i) {
+				result += i;
+			}
+		} else if (a >= b) {
+			for (int i = b; i <= a; ++i) {
+				result += i;
+			}
+		}
+		System.out.println("합 : " + result);
+
+		 temp 활용
+		if (a > b) {
+			int temp = a;
+			a = b;
+			b = temp;
+		}
+		for (int i = a; i <= b; ++i) {
+			result += i;
+		}
+		System.out.println("합 : " + result);
+		 삼항연산자 활용
+		for (int i = ((a < b) ? a : b); i <= ((a < b) ? b : a); i++) {
+			result += i;
+		}
+		System.out.println("합 : " + result);
+	}
+}
