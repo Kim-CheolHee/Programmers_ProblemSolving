@@ -1,0 +1,79 @@
+package sec02.exam02;
+
+import java.util.Scanner;
+
+import sec01.exam01.D0928_Math_random;
+
+public class D221006_01_반복문_while문1 {
+
+	public static void main(String[] args) {
+
+		// * while 문
+		// : for 문은 정해진 횟수만큼 반복한다면
+		// while 문은 조건식이 true일 경우에만 계속 반복하도록 함.
+		// false 일 경우에 반복을 종료.
+		// : 조건식에는 비교 또는 논리 연산식이 주로 사용됨.
+		// * 구조
+
+//		while(조건식) {
+//			반복실행 할 코드;
+//		}
+		// for => 1~10까지 출력
+//		System.out.println("for 문");
+//		for (int i = 1; i <= 10; i++) {
+//			System.out.print(i + " ");
+//		}
+//		System.out.println();
+//		// while => 1~10까지 출력
+//		int i = 1;
+//		System.out.println("whlie 문");
+//		while (i <= 10) {
+//			System.out.print(i + " ");
+//			i++;
+//		}
+
+		// Q1) 정수 1개를 키보드로 입력받아 1부터 정수까지의 합을 계산하는 코드를 작성하시오.
+//		Scanner sc = new Scanner(System.in);
+//		System.out.print("정수 입력 : ");
+//		int a = sc.nextInt();
+//		int b = 1;
+//		int result = 0;
+//
+//		while (a >= b) {
+//			System.out.print(b++ + " ");
+//			result += b++;
+//		}
+//		System.out.println("1~" + (b-1) + "까지의 합 : " + result);
+//		System.out.println("1~" + a + " 까지의 합 : " + result);
+
+		// Q2) 1~6까지의 수가 랜덤으로 계속 뽑히는데, 만약 뽑힌 수가 6이라면 반복문을 종료하는 코드를 아래와 같은 결과가 나오도록 코드를
+		// 작성하시오.
+		// 방법.1
+//		while (true) {
+//			int a = (int) (Math.random() * 6) + 1;
+//			System.out.println(a);
+//			if (a == 6) {
+//				break;
+//			}
+//		}
+//		System.out.println("프로그램 종료");
+		// 방법.2
+//		int random = 0;
+//		while (random>=0) {
+//			int a = (int) (Math.random() * 6) + 1;
+//			System.out.println(a);
+//			if (a == 6) {
+//				break;
+//			}
+//		}
+//		System.out.println("프로그램 종료");
+		// 방법.3
+		int num = 0;
+		while (num != 6) {
+			num = (int) (Math.random() * 6) + 1;
+			System.out.println(num);
+		}
+		System.out.println("프로그램 종료");
+	}
+
+}
