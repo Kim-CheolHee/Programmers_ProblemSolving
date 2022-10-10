@@ -1,0 +1,26 @@
+package HomeWork;
+
+// 2022. 10. 7. 19:40 김철희
+
+import java.util.Scanner;
+
+public class S221007_Q1 {
+
+	public static void main(String[] args) {
+		// Q1) 시작정수, 끝 정수, 숫자간격 까지 키보드로 입력받아 아래와 같이 출력하는 코드를 작성하시오.
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("시작 정수 입력 >> ");
+		int s = sc.nextInt();
+		System.out.print("끝 정수 입력 >> ");
+		int e = sc.nextInt();
+		System.out.print("숫자 간격 입력 >> ");
+		int b = sc.nextInt();
+		int sum = s;
+		System.out.print(s + " ");
+
+		while ((sum += b) < e) {
+			System.out.print(sum + " ");
+		}
+	}
+}
