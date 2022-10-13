@@ -1,0 +1,65 @@
+package sec02.exam01;
+
+public class D221013_02_배열의선언및생성 {
+
+	public static void main(String[] args) {
+		// * 배열 변수 선언하기
+		// : 타입[] 변수명; 타입 변수명[];
+		// : 타입에는 배열에 저장하고 싶은 데이터의 타입을 기재
+		// : 배열 변수도 참조 변수에 속하기 때문에 배열객체는 힙 영역에 생성
+		// : 배열 변수는 힙 영역의 배열 객체의 주소를 참조함
+		// : null 값으로 초기화 가능
+		// -> NullPointerException 에러 발생 주의!
+
+//		int[] arr = null;
+//		int[] arr = { 10, 34, 57, 41, 75, 61, 38 }; // 1. 값 목록으로 생성
+//		System.out.println("arr[1] : " + arr[1]);
+		// * 변수명[인덱스]; -> 인덱스는 0부터 시작!
+
+		// Q1) 34라는 숫자를 54로 변경
+//		arr[1] = 54;
+//		System.out.println("값 변경 : " + arr[1]);
+
+		// Q2) 34 + 41 + 38 => 합 출력
+//		int sum = arr[1] + arr[3] + arr[6];
+//		System.out.println("합 출력 : " + sum);
+
+		// * 배열 생성
+		// 1. 값 목록으로 배열 생성
+		// 타입[] 변수명 = { 값1, 값2, 값3, 값4, ......};
+
+		// 2. new 연산자를 이용해서 배열 생성
+
+		// Q1)
+		int[] a = { 42, 45, 78, 65, 81, 65, 98, 100, 85, 73, 61, 86 };
+		int sum = 0;
+		int j = 0;
+		System.out.print("배열의 값 : ");
+		for (int i = 0; i < a.length; i++) { // 배열에 저장된 전체 항목의 개수를 알 수 있는 : length
+			System.out.print(a[i] + " ");
+		}
+		a[4] = 91;
+		a[7] = 90;
+		a[10] = 81;
+		System.out.println();
+		System.out.println("====================배열 값 변경====================");
+		System.out.print("배열의 값 : ");
+		for (int i = 0; i < a.length; i++) { // 변경 된 배열 값
+			System.out.print(a[i] + " ");
+		}
+		System.out.println();
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] > 70) {
+				System.out.print(a[i] + " "); // 70보다 큰 a[i]값 구하기
+				sum += a[i];
+				j++; // if의 조건에 충족할 때마다 j가 증가함.
+			}
+		}
+		System.out.println();
+		System.out.println("점수 합계 : " + sum);
+		double c = (double) sum / j;
+		System.out.println("점수 평균 : " + c);
+
+	}
+
+}
