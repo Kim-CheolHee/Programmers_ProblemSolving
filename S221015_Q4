@@ -1,0 +1,56 @@
+package HomeWork;
+
+import java.util.Scanner;
+
+// 2022. 10. 15. 16:58 김철희
+
+public class S221015_Q4 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String[] id = new String[3];
+		String[] pw = new String[3];
+		int count = 0;
+		boolean run = true;
+		while (run) {
+			System.out.print("[1]회원가입     [2]로그인     [3]종료   >> ");
+			int choose = sc.nextInt();
+			if (choose == 1) {
+				if (count < 3) {
+					System.out.println("==== 회원가입 ====");
+					System.out.print("아이디 입력 : ");
+					id[count] = sc.next();
+					System.out.print("비밀번호 입력 : ");
+					pw[count] = sc.next();
+					count++;
+				} else {
+					System.out.println("회원이 가득 찼습니다");
+				}
+			} else if (choose == 2) {
+				System.out.println("<< 로그인 >>");
+				System.out.print("로그인 아이디 입력 : ");
+				String log_id = sc.next();
+				System.out.print("로그인 비밀번호 입력 : ");
+				String log_pw = sc.next();
+
+				for (int i = 0; i < count; i++) { // count가 3이여서 적은 것이며 숫자 3도 상관없음.
+					if (log_id.equals(id[i]) && log_pw.equals(pw[i])) {
+						System.out.println("로그인 성공");
+						break;
+					}
+					if (i == count - 1) { // count가 3이여서 적은 것이며 숫자 2도 상관없음.
+						System.out.println("로그인 실패");
+					}
+				}
+			} else if (choose == 3) {
+				System.out.println("프로그램이 종료되었습니다.");
+				run = false;
+			} else {
+				System.out.println("값을 잘못 입력하셨습니다");
+			}
+		}
+//		System.out.println("저장된 id" + "(" + id[0] + ", " + id[1] + ", " + id[2] + ")");
+//		System.out.println("저장된 pw" + "(" + pw[0] + ", " + pw[1] + ", " + pw[2] + ")");
+
+	}
+}
