@@ -1,0 +1,30 @@
+package Programmers;
+
+import java.util.Arrays;
+
+public class S221020_배열원소의길이 {
+
+	public static void main(String[] args) {
+		String[] strlist = { "We", "are", "the", "world!" };
+		int[] answer = new int[strlist.length];
+		for (int i = 0; i < answer.length; i++) {
+			answer[i] = strlist[i].length();
+		}
+		System.out.println(Arrays.toString(answer));
+
+		// 다른 사람의 풀이
+//		return Arrays.stream(strList).mapToInt(String::length).toArray();
+
+		// 스트림 구성 : 선언, 가공, 반환
+
+		// 선언 : 배열, 컬렉션(list, set, map) 등을 스트림 형태로 만들기
+		// Stream<데이터타입> stream명 = Arrays.stream(배열명);
+		// Stream<데이터타입> stream명 = 리스트명.stream();
+		// Stream<데이터타입> stream명 = Stream.of('값', '값'....);
+		// 각각 배열과 컬렉션을 사용하는 경우 아니면 직접 값을 넣어 사용하는 경우인데
+		// 꼭 stream을 선언한 후 값을 넣고 사용하는 것이 아니라 Arrays.stream(배열명).가공메소드...
+		// 리스트명.stream.가공메소드... 이런 식으로 바로 사용해도 된다
+
+	}
+
+}
