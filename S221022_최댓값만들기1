@@ -1,0 +1,36 @@
+package Programmers;
+
+import java.util.Arrays;
+import java.util.Collections;
+
+public class S221022_최댓값만들기1 {
+
+	public static void main(String[] args) {
+//		int[] numbers = { 0, 31, 24, 10, 1, 9 };
+		int[] numbers = { 1, 2, 3, 4, 5 };
+		Integer[] numbers2 = new Integer[numbers.length];
+		for (int i = 0; i < numbers.length; i++) {
+			numbers2[i] = numbers[i];
+		}
+		System.out.println(Arrays.toString(numbers2));
+
+		int answer = 0;
+		int max = 0;
+		int maxs = 0;
+
+		Arrays.sort(numbers2, Collections.reverseOrder());
+		max = numbers2[0];
+		maxs = numbers2[1];
+		answer = max * maxs;
+		System.out.println(answer);
+
+		// 다른 풀이
+//		int answer = 0;
+//		Arrays.sort(numbers);
+//		int firstMaxValue = numbers[numbers.length - 1];
+//		int secondMaxValue = numbers[numbers.length - 2];
+//		answer = firstMaxValue * secondMaxValue;
+//		System.out.println(answer);
+	}
+
+}
