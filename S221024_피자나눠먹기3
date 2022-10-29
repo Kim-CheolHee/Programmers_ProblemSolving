@@ -1,0 +1,16 @@
+package Programmers;
+
+public class S221024_피자나눠먹기3 {
+
+	public static void main(String[] args) {
+		int slice = 7;
+		int n = 10;
+		double answer = (double) n / slice;
+		if ((answer * 10) % 10 != 0) {
+			answer += 1;
+		}
+		System.out.println((int) answer);
+
+	}
+
+}
