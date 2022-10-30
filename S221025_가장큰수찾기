@@ -1,0 +1,39 @@
+package Programmers;
+
+import java.util.Arrays;
+
+public class S221025_가장큰수찾기 {
+
+	public static void main(String[] args) {
+//		int[] array = { 9, 10, 11, 8 };
+//		int[] answer = new int[2];
+//		int count = 0;
+//
+//		int max = 0;
+//		for (int i = 0; i < array.length; i++) {
+//			if (max < array[i]) {
+//				max = array[i];
+//			}
+//		}
+//		answer[0] = max;
+//		for (int i = 0; i < array.length; i++) {
+//			if (max == array[i]) {
+//				answer[1] = count;
+//			}
+//			count++;
+//		}
+//		System.out.println(Arrays.toString(answer));
+
+		// 다른 풀이
+		int[] array = { 9, 10, 11, 8 };
+		int[] answer = new int[2];
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] > answer[0]) { // 최대값은 if문의 조건이 맞을 때
+				answer[0] = array[i]; // answer[0]에 들어감
+				answer[1] = i; // if문이 작동할 때 array의 i값(인덱스 값)이 answer[1]에 들어감
+			}
+		}
+		System.out.println(Arrays.toString(answer));
+	}
+
+}
