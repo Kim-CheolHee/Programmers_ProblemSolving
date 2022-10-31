@@ -1,0 +1,20 @@
+package Programmers;
+
+public class S221025_문자열안에문자열 {
+
+	public static void main(String[] args) {
+		String str1 = "ab6CDE443fgh22iJKlmn1o";
+		String str2 = "6CD";
+		int answer = 0;
+
+//		if (str1.contains(str2)) {
+//			answer = 1;
+//		} else {
+//			answer = 2;
+//		}
+		// 다른 풀이
+		answer = (str1.contains(str2) ? 1 : 2);
+		System.out.println(answer);
+	}
+
+}
