@@ -1,0 +1,58 @@
+package Programmers;
+
+import java.util.Arrays;
+
+public class S221028_짝수는싫어요 {
+
+	public static void main(String[] args) {
+
+//		int n = 15;
+//		int count1 = 0;
+//		int count2 = 0;
+//		int[] odd = new int[n + 1];
+//
+//		for (int i = 0; i <= n; i++) {
+//			if (i % 2 != 0) {
+//				odd[i] = i;
+//				count1++;
+//			}
+//		}
+//		System.out.println(count1);
+//		Arrays.sort(odd);
+//		System.out.println(Arrays.toString(odd));
+//
+//		for (int i = 0; i < odd.length; i++) {
+//			if (odd[i] == 0) {
+//				count2++;
+//			}
+//		}
+//		System.out.println(count2);
+//		int[] answer = new int[count1];
+//		for (int i = 0; i < count1; i++) {
+//			answer[i] = odd[i + count2];
+//		}
+//		System.out.println(Arrays.toString(answer));
+
+		// 다른 풀이
+		int n = 15;
+		int cnt = 0;
+
+		if (n % 2 == 0)
+			cnt = n / 2; // n이 짝수일 때
+		else
+			cnt = n / 2 + 1; // n이 홀수일 때
+
+		int[] result = new int[cnt];
+		int num = 1;
+		System.out.println(cnt);
+
+		for (int i = 0; i < result.length; i++) {
+			result[i] = num; // 홀수를 배열에 넣는 것이기에 num=1부터 들어감
+			num = num + 2; // 위에서 1이 들어가면 2를 더해줘 다음 홀수로 num값 선언
+		}
+
+		System.out.println(Arrays.toString(result));
+
+	}
+
+}
