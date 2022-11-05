@@ -1,0 +1,12 @@
+int solution(int n, int k) {
+    int answer = 0;
+    int a = n/10;
+    while(true){
+        answer = (12000 * n) + (2000 * k);
+          if(n != 0 && a){
+            answer -= a * 2000;
+           }  
+        break;
+    }
+    return answer;
+}
