@@ -1,0 +1,32 @@
+package Programmers;
+
+public class S221030_개미군단 {
+
+	public static void main(String[] args) {
+		int hp = 999;
+		int generalAnt = 5;
+		int geA = 0;
+		int soldierAnt = 3;
+		int solA = 0;
+		int laborAnt = 1;
+		int laA = 0;
+		int answer = 0;
+
+		if ((hp % generalAnt) >= soldierAnt) { // 3 or 4
+			geA = hp / generalAnt;
+			solA = (hp % generalAnt) / soldierAnt;
+			laA = (hp % generalAnt) - soldierAnt;
+			answer = geA + solA + laA;
+		} else if ((hp % generalAnt) < soldierAnt) { // 0 or 1 or 2
+			geA = hp / generalAnt;
+			laA = (hp % generalAnt) / laborAnt;
+			answer = geA + laA;
+		}
+		System.out.println(answer);
+
+		// 다른 풀이
+		answer = (hp / 5) + ((hp % 5) / 3) + ((hp % 5) % 3);
+		System.out.println(answer);
+	}
+
+}
