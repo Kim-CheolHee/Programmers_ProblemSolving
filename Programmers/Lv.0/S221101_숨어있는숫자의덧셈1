@@ -1,0 +1,18 @@
+package Programmers;
+
+import java.util.Arrays;
+
+public class S221101_숨어있는숫자의덧셈1 {
+
+	public static void main(String[] args) {
+		String my_string = "aAb1B2cC34oOp";
+		int answer = 0;
+		String intMy = my_string.replaceAll("[^0-9]", "");
+		String[] m = new String[intMy.length()];
+		for (int i = 0; i < intMy.length(); i++) {
+			answer += Integer.parseInt(intMy.substring(i, i + 1));
+		}
+		System.out.println(answer);
+	}
+
+}
