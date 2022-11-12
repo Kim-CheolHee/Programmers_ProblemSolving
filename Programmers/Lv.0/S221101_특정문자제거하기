@@ -1,0 +1,24 @@
+package Programmers;
+
+import java.io.ObjectInputStream.GetField;
+
+public class S221101_특정문자제거하기 {
+
+	public static void main(String[] args) {
+		String my_string = "BCBdbe";
+		String letter = "B";
+		String answer = "";
+
+//		for (int i = 0; i < my_string.length(); i++) {
+//			if (my_string.substring(i, i + 1).equals(letter)) {
+//			} else {
+//				answer += my_string.charAt(i);
+//			}
+//		}
+//		System.out.println(answer);
+		// 다른 풀이
+		answer = my_string.replace(letter, "");
+		System.out.println(answer);
+	}
+
+}
