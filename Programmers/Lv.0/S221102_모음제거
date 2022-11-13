@@ -1,0 +1,29 @@
+package Programmers;
+
+import java.util.Arrays;
+
+public class S221102_모음제거 {
+
+	public static void main(String[] args) {
+		String my_string = "nice to meet you";
+		String answer = "";
+//		String charsToRemove = "aeiou";
+//
+//		for (char c : charsToRemove.toCharArray()) {
+//			my_string = my_string.replace(String.valueOf(c), "");
+//		}
+//		System.out.println(my_string);
+
+		// 다른 풀이
+		answer = my_string.replaceAll("[aeiou]", "");
+		System.out.println(answer);
+
+		String allTest = "aaabbbvccacfgdracabtghd";
+		System.out.println(allTest.replace("ab", "0"));
+		// aa0bbvccacfgdrac0tghd, ""안의 문자 그대로 일 때 변환한다
+
+		System.out.println(allTest.replaceAll("[abc]", "0"));
+		// 000000vcc0cfgdr0c00tghd, []안의 문자를 모두 하나의 단위씩 변환한다
+	}
+
+}
