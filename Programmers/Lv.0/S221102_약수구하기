@@ -1,0 +1,40 @@
+package Programmers.Lv0;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class S221102_약수구하기 {
+
+	public static void main(String[] args) {
+		int n = 24;
+//		int count1 = 0;
+//		int count2 = 0;
+//
+//		for (int i = 1; i <= n; i++) {
+//			if (n % i == 0) {
+//				System.out.print(i + " ");
+//				count1++;
+//			}
+//		}
+//		int[] answer = new int[count1];
+//		for (int i = 1; i <= n; i++) {
+//			if (n % i == 0) {
+//				answer[count2] = i;
+//				count2++;
+//			}
+//		}
+//		System.out.println(Arrays.toString(answer));
+
+		// 다른 풀이
+		ArrayList<Integer> answer = new ArrayList<Integer>();
+
+		for (int i = 1; i <= n; i++) {
+			if (n % i == 0)
+				answer.add(i);
+		}
+		System.out.println(answer);
+//		https://coding-factory.tistory.com/551
+
+	}
+
+}
