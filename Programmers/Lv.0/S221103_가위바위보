@@ -1,0 +1,26 @@
+package Programmers.Lv0;
+
+import java.util.Iterator;
+
+public class S221103_가위바위보 {
+
+	public static void main(String[] args) {
+		String rsp = "205";
+		String answer = "";
+		char[] a = rsp.toCharArray();
+		System.out.println(a);
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] == '2') {
+				answer += "0";
+			} else if (a[i] == '0') {
+				answer += "5";
+			} else if (a[i] == '5') {
+				answer += "2";
+			}
+		}
+		System.out.println(answer);
+		
+		
+	}
+
+}
