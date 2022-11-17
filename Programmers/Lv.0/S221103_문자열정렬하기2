@@ -1,0 +1,22 @@
+package Programmers.Lv0;
+
+import java.util.Arrays;
+
+public class S221103_문자열정렬하기2 {
+
+	public static void main(String[] args) {
+		String my_string = "heLLo";
+		String lower = my_string.toLowerCase();
+		char[] a = lower.toCharArray();
+		Arrays.sort(a);
+		String answer = String.valueOf(a);
+		System.out.println(answer);
+
+		// 다른 풀이
+		char[] c = my_string.toLowerCase().toCharArray();
+		Arrays.sort(c);
+//		return new String(c);
+
+	}
+
+}
