@@ -1,0 +1,32 @@
+package Programmers.Lv0;
+
+import java.util.Arrays;
+
+public class S221103_배열회전시키기 {
+
+	public static void main(String[] args) {
+		Integer[] numbers = { 4, 455, 6, 4, -1, 45, 6 };
+		String direction = "right";
+		int[] answer = new int[numbers.length];
+		for (int i = 0; i < answer.length; i++) {
+			answer[i] = numbers[i];
+		}
+		System.out.println(Arrays.toString(answer));
+		if (direction.equals("right")) {
+			int temp = answer[numbers.length - 1];
+			for (int i = numbers.length - 1; i >= 1; i--) {
+				answer[i] = answer[i - 1];
+			}
+			answer[0] = temp;
+		} else if (direction.equals("left")) {
+			int temp = answer[0];
+			for (int i = 0; i < numbers.length - 1; i++) {
+				answer[i] = answer[i + 1];
+			}
+			answer[numbers.length - 1] = temp;
+		}
+		System.out.println(Arrays.toString(answer));
+
+	}
+
+}
