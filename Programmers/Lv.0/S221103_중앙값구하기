@@ -1,0 +1,31 @@
+package Programmers.Lv0;
+
+import java.util.Arrays;
+
+public class S221103_중앙값구하기 {
+
+	public static void main(String[] args) {
+		int[] array = { 1, 2, 7, 10, 11 };
+		Arrays.sort(array);
+		System.out.println("오름차순 : " + Arrays.toString(array));
+//		int divide = array.length / 2;
+//		int answer = array[divide];
+//		System.out.println(answer);
+
+		// 다른 풀이
+//		Arrays.sort(array);
+//      return array[array.length >> 1];
+		int answer1 = array[array.length >> 1];
+		int answer2 = array[array.length >> 2];
+		int answer3 = array[array.length >> 3];
+		int answer4 = array[array.length >> 4];
+		int answer5 = array[array.length >> -1];
+		System.out.println("answer : " + answer1);
+		System.out.println("answer : " + answer2);
+		System.out.println("answer : " + answer3);
+		System.out.println("answer : " + answer4);
+		System.out.println("answer : " + answer5);
+
+	}
+
+}
