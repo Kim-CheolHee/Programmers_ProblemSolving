@@ -1,0 +1,30 @@
+package Programmers.Lv0;
+
+import java.security.PublicKey;
+import java.util.Iterator;
+
+public class S221110_피자나눠먹기2 {
+
+	public static void main(String[] args) {
+
+		int n = 10;
+		int answer = 0;
+		int pizza = 6;
+		int pizzaNum = n * pizza;
+
+//		if (n % pizza == 0) {
+//			answer = n / pizza;
+//		} else if(n % pizza != 0) {
+//			n > pizza ? ():();
+//		}
+		for (int i = 1; i < pizzaNum; i++) {
+			if ((pizza * i) % n == 0) {
+				answer = i;
+				System.out.println("i : " + i);
+				break;
+			}
+		}
+		System.out.println(answer);
+	}
+
+}
