@@ -1,0 +1,43 @@
+package Programmers.Lv0;
+
+import java.util.Arrays;
+
+public class S221113_A로B만들기 {
+
+	public static void main(String[] args) {
+		String before = "allpe";
+		String after = "apple";
+		int answer = 0;
+//		String before = "Allah";
+//		String after = "hello";
+		String[] b = new String[before.length()];
+		String[] a = new String[after.length()];
+		String bb = "";
+		String aa = "";
+
+		for (int i = 0; i < before.length(); i++) {
+			b[i] = before.substring(i, i + 1);
+		}
+		Arrays.sort(b);
+		for (int i = 0; i < after.length(); i++) {
+			a[i] = after.substring(i, i + 1);
+		}
+		Arrays.sort(a);
+		System.out.println(Arrays.toString(b));
+		System.out.println(Arrays.toString(a));
+		for (int i = 0; i < b.length; i++) {
+			bb += b[i];
+		}
+		for (int i = 0; i < a.length; i++) {
+			aa += a[i];
+		}
+		if(bb.equals(aa)) {
+			answer = 1;
+		} else {
+			answer = 0;
+		}
+		System.out.println(answer);
+
+	}
+
+}
