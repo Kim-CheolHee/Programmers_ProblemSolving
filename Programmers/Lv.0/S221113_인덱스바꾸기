@@ -1,0 +1,32 @@
+package Programmers.Lv0;
+
+public class S221113_인덱스바꾸기 {
+
+	public static void main(String[] args) {
+		String my_string = "hello";
+		int num1 = 1;
+		int num2 = 2;
+
+		String answer = "";
+		for (int i = 0; i < my_string.length(); i++) {
+			int a = 0;
+			if (i == num1) {
+				a = num2;
+			} else if (i == num2) {
+				a = num1;
+			} else {
+				a = i;
+			}
+			answer += my_string.charAt(a);
+		}
+		System.out.println(answer);
+
+		// 다른 풀이
+//		List<String> list = Arrays.stream(myString.split("")).collect(Collectors.toList());
+//
+//        Collections.swap(list, num1, num2);
+//        return String.join("", list);
+
+	}
+
+}
