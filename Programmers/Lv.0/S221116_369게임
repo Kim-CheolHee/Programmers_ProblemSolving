@@ -1,0 +1,30 @@
+package Programmers.Lv0;
+
+import java.util.Arrays;
+
+public class S221116_369게임 {
+
+	public static void main(String[] args) {
+		int order = 29423;
+		String SOrder = Integer.toString(order);
+		System.out.println("SOrder : " + SOrder);
+		int answer = 0;
+		int[] orderArrays = new int[SOrder.length()];
+		for (int i = 0; i < orderArrays.length; i++) {
+			orderArrays[i] = SOrder.charAt(i) - '0';
+		}
+		System.out.println(Arrays.toString(orderArrays));
+		for (int i = 0; i < orderArrays.length; i++) {
+			if (orderArrays[i] == 3 || orderArrays[i] == 6 || orderArrays[i] == 9) {
+				answer += 1;
+			}
+		}
+		System.out.println(answer);
+
+		// 다른 풀이
+//		return (int) Arrays.stream(String.valueOf(order).split("")).map(Integer::parseInt)
+//				.filter(i -> i == 3 || i == 6 || i == 9).count();
+
+	}
+
+}
