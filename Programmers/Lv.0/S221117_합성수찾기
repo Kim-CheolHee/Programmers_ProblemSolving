@@ -1,0 +1,27 @@
+package Programmers.Lv0;
+
+public class S221117_합성수찾기 {
+
+	public static void main(String[] args) {
+		int n = 10; // 주어지는 정수 n
+		int answer = 0;
+
+		for (int i = 1; i <= n; i++) { // 첫 포문은 1부터 정수n
+			int cnt = 0;
+			for (int j = 1; j <= i; j++) {
+				if (i % j == 0)
+					cnt++;
+			}
+			if (cnt >= 3)
+				answer++;
+		}
+
+		System.out.println(answer);
+
+		// 다른 풀이
+//		return (int) IntStream.rangeClosed(1, n)
+//				.filter(i -> (int) IntStream.rangeClosed(1, i).filter(i2 -> i % i2 == 0).count() > 2).count();
+
+	}
+
+}
