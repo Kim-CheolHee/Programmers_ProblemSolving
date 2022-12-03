@@ -1,0 +1,25 @@
+package Programmers.Lv0;
+
+public class S221120_중복된문자제거 {
+
+	public static void main(String[] args) {
+		String my_string = "people";
+		String answer = "";
+
+		for (int i = 0; i < my_string.length(); i++) {
+			if (my_string.indexOf(my_string.charAt(i)) == i) { // 값 중 중복된값의 첫번째 값이 위치하는 인덱스를 리턴하는 indexOf
+				answer += my_string.charAt(i);
+			}
+		}
+		System.out.println(answer);
+
+		// 다른 풀이
+//		import java.util.stream.Collectors;
+//		return my_string.chars()
+//                .mapToObj(Character::toString)
+//                .distinct()
+//                .collect(Collectors.joining());
+
+	}
+
+}
