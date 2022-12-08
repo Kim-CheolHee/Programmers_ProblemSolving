@@ -1,0 +1,29 @@
+package Programmers.Lv1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class S221113_두개뽑아서더하기 {
+
+	public static void main(String[] args) {
+		int[] numbers = { 2, 1, 3, 4, 1 };
+		ArrayList<Integer> AList = new ArrayList<Integer>();
+
+		for (int i = 0; i < numbers.length; i++) {
+			for (int j = i + 1; j < numbers.length; j++) {
+				int a = numbers[i] + numbers[j];
+				if (AList.indexOf(a) < 0) {
+					AList.add(a);
+				}
+			}
+		}
+		int[] answer = new int[AList.size()];
+		for (int i = 0; i < AList.size(); i++) {
+			answer[i] = AList.get(i);
+		}
+		Arrays.sort(answer);
+		System.out.println(Arrays.toString(answer));
+
+	}
+
+}
