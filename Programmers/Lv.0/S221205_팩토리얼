@@ -1,0 +1,28 @@
+package Programmers.Lv0;
+
+public class S221205_팩토리얼 {
+
+	public static void main(String[] args) {
+
+		int n = 3628800;
+		int answer = 0;
+
+		int count = 1;
+		int sum = 1;
+		boolean run = true;
+		while (run) {
+			sum *= count;
+			count++;
+			if (sum == n) {
+				answer = count - 1;
+				run = false;
+			} else if (sum > n) {
+				answer = count - 2;
+				run = false;
+			}
+		}
+		System.out.println(answer);
+
+	}
+
+}
