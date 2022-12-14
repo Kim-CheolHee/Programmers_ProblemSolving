@@ -1,0 +1,38 @@
+package Programmers.Lv0;
+
+import java.util.*;
+
+public class S221207_진료순서정하기 {
+
+	public static void main(String[] args) {
+
+		int[] emergency = { 3, 76, 24 };
+		int[] answer = new int[emergency.length];
+		Integer[] emergencyI = new Integer[emergency.length];
+		for (int i = 0; i < emergencyI.length; i++) {
+			emergencyI[i] = emergency[i];
+		}
+		Arrays.sort(emergencyI, Collections.reverseOrder());
+		System.out.println(Arrays.toString(emergencyI));
+		Map<Integer, Integer> emer = new HashMap<Integer, Integer>();
+		for (int i = 0; i < emergencyI.length; i++) {
+			emer.put(i + 1, emergencyI[i]);
+		}
+		Set<Integer> keySet = emer.keySet();
+		for (Integer key : keySet) {
+			System.out.println("keySet-for : " + key + " / " + emer.get(key));
+		}
+		for (int i = 0; i < answer.length; i++) {
+			for (Integer key : keySet) {
+				if (emergency[i] == emer.get(key)) {
+					answer[i] = key;
+				}
+			}
+		}
+		System.out.println(Arrays.toString(answer));
+
+		///////////////////////////////////////////////////
+//		return Arrays.stream(e).map(i -> Arrays.stream(e).boxed().sorted(Comparator.reverseOrder()).collect(Collectors.toList()).indexOf(i) + 1).toArray();
+	}
+
+}
