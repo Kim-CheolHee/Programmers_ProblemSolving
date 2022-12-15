@@ -1,0 +1,33 @@
+package Programmers.Lv0;
+
+public class S221209_7의개수 {
+
+	public static void main(String[] args) {
+
+		int[] array = { 7, 77, 17 };
+		int answer = 0;
+
+		for (int i = 0; i < array.length; i++) {
+			StringBuilder sc = new StringBuilder(); // sc 변수명을 갖는 Stringbuilder 객체 생성, 첫번째 for문 안에 넣음으로써 반복할 때 마다 초기화
+			sc.append(array[i]); // .append()를 이용해 sc에 첫 for문의 t값을 대입
+			for (int j = 0; j < sc.length(); j++) { // 두번째 for문으로 sc변수에 담긴 t값을 r(0)인덱스부터 돌리며 비교하고자 하는 k와 같은지 비교
+				if ((sc.charAt(j) - '0') == 7) {
+					answer++; // 같을 시 answer 1씩 증가
+				}
+			}
+			System.out.println("sc 길이 : " + sc.length());
+		}
+		System.out.println(answer);
+		//////////////////////////////////////////////////////////////
+//		for(int a : array){
+//            while(a != 0){
+//                if(a % 10 == 7){
+//                    answer++;
+//                }
+//                a /= 10;
+//            }
+//        }
+
+	}
+
+}
