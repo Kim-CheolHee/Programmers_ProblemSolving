@@ -1,0 +1,19 @@
+package Programmers.Lv0;
+
+public class S221210_이진수더하기 {
+
+	public static void main(String[] args) {
+
+		String bin1 = "10";
+		String bin2 = "11";
+		int a = Integer.parseInt(bin1, 2);
+		int b = Integer.parseInt(bin2, 2);
+		int c = a + b;
+		String answer = Integer.toBinaryString(c);
+		System.out.println(answer);
+
+		// 다른 풀이
+		Integer.toBinaryString(Integer.parseInt(bin1, 2) + Integer.parseInt(bin2, 2));
+	}
+
+}
