@@ -1,0 +1,22 @@
+package Programmers.Lv0;
+
+public class S221212_숨어있는숫자의덧셈2 {
+
+	public static void main(String[] args) {
+
+//		String my_string = "aAb1B2cC34oOp";
+		String my_string = "1a2b3c4d123Z";
+		int answer = 0;
+
+//		String[] str = my_string.replaceAll("[a-zA-Z]", " ").split(" ");
+		String[] str = my_string.replaceAll("[^0-9]", " ").split(" ");
+		for (String s : str) {
+			if (!s.equals(""))
+				answer += Integer.valueOf(s);
+		}
+//		for (String s : str) {
+//			System.out.println(s);
+//		}
+		System.out.println(answer);
+	}
+}
