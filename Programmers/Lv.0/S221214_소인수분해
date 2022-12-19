@@ -1,0 +1,34 @@
+package Programmers.Lv0;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class S221214_소인수분해 {
+
+	public static void main(String[] args) {
+
+		int n = 12; // 2, 3
+//		int n = 17; // 17
+//		int n = 420; // 2, 3, 5, 7
+		int s = 2;
+
+		List<Integer> list = new ArrayList<Integer>();
+		while (n >= 2) {
+			if (n % s == 0) {
+				list.add(s);
+				n /= s;
+			} else {
+				s++;
+			}
+		}
+		List<Integer> newList = list.stream().distinct().collect(Collectors.toList());
+		System.out.println(newList);
+
+		int[] answer = new int[newList.size()];
+		for (int i = 0; i < newList.size(); i++) {
+			answer[i] = newList.get(i).intValue();
+		}
+		System.out.println(Arrays.toString(answer));
+	}
+
+}
