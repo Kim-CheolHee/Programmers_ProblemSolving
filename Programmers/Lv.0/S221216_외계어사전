@@ -1,0 +1,30 @@
+package Programmers.Lv0;
+
+public class S221216_외계어사전 {
+
+	public static void main(String[] args) {
+
+//		String[] spell = { "z", "d", "x" };
+//		String[] dic = { "def", "dww", "dzx", "loveaw" };
+		String[] spell = { "p", "o", "s" };
+		String[] dic = { "sod", "eocd", "qixm", "adio", "soo" };
+		int answer = 2;
+
+		for (String dicS : dic) { // dic배열에 있는 첫번째 값 def를 dicS에 저장
+			boolean isRight = true; // isRight 토글 생성
+
+			for (String spellS : spell) { // spell 배열 0부터 2까지의 값을 순차적으로 spellS에 저장하고 하나씩 아래 if문에서 비교
+				if (dicS.indexOf(spellS) == -1) { // dicS값 def에 spellS값 z가 포함되어 있는지 확인 후 포함돼있으면 해당 위치 인덱스값, 없으면 -1 리턴
+					isRight = false; // dicS값 중 하나라도 중복된게 없어 -1이 리턴되었다면 isRight는 false 리턴
+					break;
+				}
+			}
+
+			if (isRight) { // 모두 중복된 경우 isRight는 최초값대로 true를 리턴하여
+				answer = 1; // answer는 1을 리턴
+				break;
+			}
+		}
+		System.out.println(answer);
+	}
+}
