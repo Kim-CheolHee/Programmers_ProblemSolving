@@ -1,0 +1,21 @@
+package Programmers.Lv0;
+
+public class S221218_로그인성공 {
+
+	public static void main(String[] args) {
+
+		String[] id_pw = { "programmer01", "15789" };
+		String[][] db = { { "programmer02", "111111" }, { "programmer00", "134" }, { "programmer01", "1145" } };
+		String answer = "fail";
+
+		for (String[] s : db) {
+			if (s[0].equals(id_pw[0]) && s[1].equals(id_pw[1])) {
+				answer = "login";
+			} else if (s[0].equals(id_pw[0]) && !s[1].equals(id_pw[1])) {
+				answer = "wrong pw";
+			}
+		}
+		System.out.println(answer);
+	}
+
+}
