@@ -1,0 +1,42 @@
+package Programmers.Lv0;
+
+public class S221218_삼각형의완성조건 {
+
+	public static void main(String[] args) {
+
+		int[] sides = { 11, 7 };
+		int answer = 0;
+
+		int a = sides[0]; // 11
+		int b = sides[1]; // 7
+		int c = a + b - 1; // 17
+		int count1 = 0;
+		int count2 = 0;
+		if (a >= b) { // 11 >= 7
+			for (int i = 0; i < b; i++) { // 4
+				count1++; // 4
+			}
+			if (c > a) { // 17 > 11
+				for (int i = 0; i < c - a; i++) { // 6
+					count2++; // 6
+				}
+			}
+		} else if (b > a) { // 6 > 3
+			for (int i = 0; i < a; i++) { // 3 즉 3번 반복
+				count1++; // 3
+			}
+			if (c > b) {
+				for (int i = 0; i < c - b; i++) {
+					count2++;
+				}
+			}
+		}
+		answer = count1 + count2;
+		System.out.println(answer);
+		///////////////////////////////////////////////////////
+//		int cnt = 0;
+//		for (int i = (sides[0]>sides[1]?sides[0]-sides[1]:sides[1]-sides[0])+1; i < sides[0] + sides[1]; i++)  cnt++;
+//		answer = cnt;
+	}
+
+}
