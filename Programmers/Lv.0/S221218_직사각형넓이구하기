@@ -1,0 +1,30 @@
+package Programmers.Lv0;
+
+import java.util.*;
+
+public class S221218_직사각형넓이구하기 {
+
+	public static void main(String[] args) {
+
+		int[][] dots = { { -1, -1 }, { 1, 1 }, { 1, -1 }, { -1, 1 } };
+		int answer = 0;
+
+		int[] width = new int[4];
+		for (int i = 0; i < dots.length; i++) {
+			int[] w = dots[i];
+			width[i] = w[0];
+		}
+		int[] height = new int[4];
+		for (int i = 0; i < dots.length; i++) {
+			int[] h = dots[i];
+			height[i] = h[1];
+		}
+		Arrays.sort(width);
+		Arrays.sort(height);
+		int W = width[3] - width[0];
+		int H = height[3] - height[0];
+		answer = W * H;
+		System.out.println(answer);
+	}
+
+}
