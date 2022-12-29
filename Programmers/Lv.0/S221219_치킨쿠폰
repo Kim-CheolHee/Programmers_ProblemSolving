@@ -1,0 +1,20 @@
+package Programmers.Lv0;
+
+public class S221219_치킨쿠폰 {
+
+	public static void main(String[] args) {
+
+		int chicken = 1081;
+		int answer = 0;
+		int bonusChicken = 10;
+
+		while (chicken >= bonusChicken) {
+			int newChicken = chicken / bonusChicken;
+			int elseChicken = chicken % bonusChicken;
+			chicken = newChicken + elseChicken;
+			answer += newChicken;
+		}
+		System.out.println(answer);
+	}
+
+}
