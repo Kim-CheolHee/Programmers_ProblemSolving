@@ -1,0 +1,26 @@
+package Programmers.Lv0;
+
+import java.util.*;
+
+public class S221222_등수매기기 {
+
+	public static void main(String[] args) {
+
+		int[][] score = { { 80, 70 }, { 70, 80 }, { 30, 50 }, { 90, 100 }, { 100, 90 }, { 100, 100 }, { 10, 30 } };
+		// ________________ 0.0 0.1 , _ 1.0 1.1 , _ 2.0 2.1 , _ 3.0 3.1
+
+		List<Integer> scoreList = new ArrayList<>();
+		for (int[] t : score) {
+			scoreList.add(t[0] + t[1]); // 150, 150, 80, 190, 190, 200, 40
+		}
+		scoreList.sort(Comparator.reverseOrder()); // 200, 190, 190, 150, 150, 80, 40
+		int[] answer = new int[score.length];
+		for (int i = 0; i < score.length; i++) {
+			answer[i] = scoreList.indexOf(score[i][0] + score[i][1]) + 1;
+			// indexOf 로 scoreList에서의 score[i][0] + score[i][1] 값의 위치를 리턴 후 +1 하여 answer에 저장 
+		}
+		System.out.println(Arrays.toString(answer));
+
+	}
+
+}
