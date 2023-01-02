@@ -1,0 +1,33 @@
+package Programmers.Lv0;
+
+public class S221224_유한소수판별하기 {
+
+	public static void main(String[] args) {
+
+//		int a = 7;
+//		int b = 20;
+		int a = 12;
+		int b = 21;
+		int answer = 1;
+
+		int max = 0;
+		for (int i = 1; i <= a; i++) { // a/b를 기약분수로 만들어 b값을 추출하는 식
+			if (a % i == 0 && b % i == 0)
+				max = i; // max = 1, max = 3
+		}
+		System.out.println(max);
+		b /= max; // b = 20, b = 7
+
+		while (b > 1) { // b가 1 이외 2 혹은 5를 인수로 갖는지 반복하는 식, 없다면 2를 리턴(무한소수)
+			if (b % 2 == 0) {
+				b /= 2;
+			} else if (b % 5 == 0) {
+				b /= 5;
+			} else {
+				answer = 2;
+			}
+		}
+
+		System.out.println(answer);
+	}
+}
