@@ -1,0 +1,50 @@
+package Programmers.Lv0;
+
+import java.util.*;
+
+public class S221224_저주의숫자3 {
+
+	public static void main(String[] args) {
+
+		int n = 40;
+		int num = 0;
+		int[] a = new int[n];
+		for (int i = 0; i < a.length; i++) {
+			a[i] = i + 1;
+		}
+		List<Integer> b = new ArrayList<Integer>();
+		while (true) {
+			num++;
+			if (num % 3 == 0) {
+				continue;
+			}
+//			if (num % 10 == 3) {
+//				continue;
+//			}
+//			if (Math.floor(num / 10) == 3 || Math.floor(num / 10) == 13) {
+//				continue;
+//			}
+			if (String.valueOf(num).contains("3")) {
+				continue;
+			}
+			b.add(num);
+			if (b.size() == a.length) {
+				break;
+			}
+		}
+		System.out.println(b);
+		System.out.println(b.get(n - 1));
+
+		/////////////////////////////////////////////////
+		int answer = 0;
+		for (int i = 1; i <= n; i++) {
+			answer++;
+			if (answer % 3 == 0 || String.valueOf(answer).contains("3")) {
+				i--;
+			}
+		}
+
+		System.out.println(answer);
+	}
+
+}
