@@ -1,0 +1,20 @@
+package Programmers.Lv0;
+
+public class S221227_다음에올숫자 {
+
+	public static void main(String[] args) {
+
+		int[] common = { 1, 2, 3, 4 };
+		int answer = 0;
+
+		for (int i = 0; i < common.length; i++) {
+			if (common[1] - common[0] == common[2] - common[1]) {
+				answer = common[common.length - 1] + (common[1] - common[0]);
+			} else if (common[1] / common[0] == common[2] / common[1]) {
+				answer = common[common.length - 1] * (common[1] / common[0]);
+			}
+		}
+		System.out.println(answer);
+	}
+
+}
