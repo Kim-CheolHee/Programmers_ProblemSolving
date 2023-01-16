@@ -1,0 +1,41 @@
+package Programmers.Lv0;
+
+public class S221231_평행 {
+
+	public static void main(String[] args) {
+		
+		// 첫점과 두번째점의 y축 값을 뺀 것 * 세번째점과 네번째점의 x축 값을 뺀것 = 결과값이 같거나 둘다 절대값이 1이면 1-2, 3-4로 이은 두 선은 평행하다
+		int[][] dots = { { 1, 4 }, { 9, 2 }, { 3, 8 }, { 11, 6 } };
+		int answer = 0;
+
+		int a = (dots[0][1] - dots[1][1]) * (dots[2][0] - dots[3][0]);
+		// -16 ________________ ( 4 - 2 ) * ( 3 - 11 )
+		int b = (dots[2][1] - dots[3][1]) * (dots[0][0] - dots[1][0]);
+		// -16 ________________ ( 8 - 6 ) * ( 1 - 9 )
+		if (a == b || (Math.abs(a) == 1 && Math.abs(b) == 1)) {
+			answer = 1;
+		}
+
+		// 1,3 번째 점
+		a = (dots[0][1] - dots[2][1]) * (dots[1][0] - dots[3][0]);
+		// 8 ______________ ( 4 - 8 ) * ( 9 - 11 )
+		b = (dots[1][1] - dots[3][1]) * (dots[0][0] - dots[2][0]);
+		// -6 ______________( 9 - 6 ) * ( 1 - 3 )
+		if (a == b || (Math.abs(a) == 1 && Math.abs(b) == 1)) {
+			answer = 1;
+		}
+
+		// 1,4 번째 점
+		a = (dots[0][1] - dots[3][1]) * (dots[2][0] - dots[1][0]);
+		// -16 ____________ ( 4 - 6 ) * ( 3 - 9 )
+		b = (dots[2][1] - dots[1][1]) * (dots[0][0] - dots[3][0]);
+		// -60 ____________ ( 8 - 2 ) * ( 1 - 11 )
+		if (a == b || (Math.abs(a) == 1 && Math.abs(b) == 1)) {
+			answer = 1;
+		}
+
+		System.out.println(answer);
+
+	}
+
+}
