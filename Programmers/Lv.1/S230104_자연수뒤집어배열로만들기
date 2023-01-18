@@ -1,0 +1,20 @@
+package Programmers.Lv1;
+
+public class S230104_자연수뒤집어배열로만들기 {
+
+	public static void main(String[] args) {
+
+		long n = 12345;
+		String a = String.valueOf(n);
+		int[] answer = new int[a.length()];
+		String b = "";
+		for (int i = a.length() - 1; i >= 0; i--) {
+			b += String.valueOf(a.charAt(i) - '0');
+		}
+		for (int x = 0; x < a.length(); x++) {
+			answer[x] = Integer.parseInt(String.valueOf(b.charAt(x) - '0'));
+		}
+		System.out.println(answer);
+	}
+
+}
