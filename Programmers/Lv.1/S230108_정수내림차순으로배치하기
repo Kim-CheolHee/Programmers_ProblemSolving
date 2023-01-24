@@ -1,0 +1,29 @@
+package Programmers.Lv1;
+
+import java.util.*;
+
+public class S230108_정수내림차순으로배치하기 {
+
+	public static void main(String[] args) {
+
+		long n = 118372;
+//		String nStr = String.valueOf(n); // String 으로 타입변환
+		String[] nArray = String.valueOf(n).split(""); // split 메소드 활용하여 String 배열에 쪼개넣기
+		Arrays.sort(nArray, Collections.reverseOrder()); // 내림차순 정렬
+		String reverseStr = String.join("", nArray); // join 메소드 활용 배열값 문자열로 합치기
+		long answer = Long.parseLong(reverseStr); // Long으로 타입변환
+		System.out.println(answer);
+
+		// ==================================================================
+
+//		String[] list = String.valueOf(n).split("");
+//		Arrays.sort(list);
+//
+//		StringBuilder sb = new StringBuilder();
+//		for (String aList : list)
+//			sb.append(aList);
+//
+//		long answer = Long.parseLong(sb.reverse().toString());
+	}
+
+}
