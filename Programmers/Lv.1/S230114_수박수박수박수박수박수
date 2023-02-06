@@ -1,0 +1,15 @@
+package Programmers.Lv1;
+
+public class S230114_수박수박수박수박수박수 {
+
+	public static void main(String[] args) {
+
+		int n = 3;
+		String answer = "";
+		for (int i = 1; i <= n; i++) {
+			answer += i % 2 != 0 ? "수" : "박";
+		}
+		System.out.println(answer);
+	}
+
+}
