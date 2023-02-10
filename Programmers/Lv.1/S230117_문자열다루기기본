@@ -1,0 +1,19 @@
+package Programmers.Lv1;
+
+public class S230117_문자열다루기기본 {
+
+	public static void main(String[] args) {
+		
+		String s = "a234";
+		
+		boolean answer = false;
+		String reg = "^[0-9]+$";
+		if ((s.length() == 4 || s.length() == 6) && s.matches(reg)) {
+			answer = true;
+		}
+		
+		System.out.println(answer);
+		
+	}
+
+}
