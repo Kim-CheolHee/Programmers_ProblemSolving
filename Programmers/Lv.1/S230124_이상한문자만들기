@@ -1,0 +1,23 @@
+package Programmers.Lv1;
+
+import java.util.Arrays;
+
+public class S230124_이상한문자만들기 {
+
+	public static void main(String[] args) {
+		
+		String s = "try hello world";
+		String answer = "";
+		int cnt = 0;
+		
+		String[] sArray = s.split("");
+		
+		for (String ss : sArray) {
+			cnt = ss.contains(" ") ? 0 : cnt + 1;
+			answer += cnt % 2 == 0 ? ss.toLowerCase() : ss.toUpperCase();
+		}
+		
+		System.out.println(answer);
+	}
+
+}
