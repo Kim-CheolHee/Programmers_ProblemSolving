@@ -1,0 +1,48 @@
+package Programmers.Lv1;
+
+public class S230128_최소직사각형 {
+
+	public static void main(String[] args) {
+
+		int[][] sizes = { { 60, 50 }, { 30, 70 }, { 60, 30 }, { 80, 40 } };
+		// 0.0 0.1 1.0 1.1 2.0 2.1 3.0 3.1
+		int answer = 0;
+		int fMax = 0;
+		int sMax = 0;
+		int temp = 0;
+
+//		for (int i = 0; i < sizes.length; i++) {
+//			if (sizes[i][0] > sizes[i][1]) {
+//				continue;
+//			} else if (sizes[i][0] < sizes[i][1]) {
+//				temp = sizes[i][0];
+//				sizes[i][0] = sizes[i][1];
+//				sizes[i][1] = temp;
+//			}
+//		}
+//
+//		for (int i = 0; i < sizes.length; i++) {
+//			if (sizes[i][0] > fMax) {
+//				fMax = sizes[i][0];
+//			}
+//		}
+//		for (int j = 0; j < sizes.length; j++) {
+//			if (sizes[j][1] > sMax) {
+//				sMax = sizes[j][1];
+//			}
+//		}
+//		System.out.println(fMax);
+//		System.out.println(sMax);
+//		answer = fMax * sMax;
+//		System.out.println(answer);
+		///////////////////////////////////////////////////////////
+		int width = 0, height = 0;
+		for (int[] card : sizes) {
+			width = Math.max(width, Math.max(card[0], card[1]));
+			height = Math.max(height, Math.min(card[0], card[1]));
+		}
+		answer = width * height;
+		System.out.println(answer);
+	}
+
+}
