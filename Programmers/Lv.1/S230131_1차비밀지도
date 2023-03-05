@@ -1,0 +1,55 @@
+package Programmers.Lv1;
+
+import java.util.Arrays;
+
+
+public class S230131_1차비밀지도 {
+
+	public static void main(String[] args) {
+
+		int n = 6;
+		int[] arr1 = {46, 33, 33 ,22, 31, 50};
+		int[] arr2 = {27 ,56, 19, 14, 14, 10};
+//		int n = 5;
+//		int[] arr1 = { 9, 20, 28, 18, 11 };
+//		int[] arr2 = { 30, 1, 21, 17, 28 };
+		String[] answer = new String[n];
+		String a1 = "";
+		String a2 = "";
+		String a3 = "";
+		for (int i = 0; i < n; i++) {
+			a1 += String.format("%0"+n+"d", Long.parseLong(Integer.toBinaryString(arr1[i])));
+			a2 += String.format("%0"+n+"d", Long.parseLong(Integer.toBinaryString(arr2[i])));
+		}
+		System.out.println(a1);
+		System.out.println(a2);
+		for (int i = 0; i < n * n; i++) {
+			if (a1.charAt(i) == 49 || a2.charAt(i) == 49) {
+				a3 += "#";
+			} else {
+				a3 += "@";
+			}
+		}
+		System.out.println(a3);
+		int plus = 0;
+		for (int i = 0; i < n; i++) {
+			answer[i] = a3.substring(plus, plus+n).replace("@", " ");
+			plus += n;
+		}
+		System.out.println(Arrays.toString(answer));
+		//////////////////////////////////////////////////////////////////////////////////////////
+		
+		String[] result = new String[n];
+        for (int i = 0; i < n; i++) {
+            result[i] = Integer.toBinaryString(arr1[i] | arr2[i]); // 비트!!
+        }
+
+        for (int i = 0; i < n; i++) {
+            result[i] = String.format("%" + n + "s", result[i]);
+            result[i] = result[i].replaceAll("1", "#");
+            result[i] = result[i].replaceAll("0", " ");
+        }
+        System.out.println(Arrays.toString(result));
+	}
+
+}
