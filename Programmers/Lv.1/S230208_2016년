@@ -1,0 +1,13 @@
+package Programmers.Lv1;
+
+import java.time.*;
+
+public class S230208_2016년 {
+
+	public static void main(String[] args) {
+		String answer = "";
+		int a = 5;
+		int b = 24;
+		answer = LocalDate.of(2016, a, b).getDayOfWeek().toString().substring(0, 3);
+	}
+}
