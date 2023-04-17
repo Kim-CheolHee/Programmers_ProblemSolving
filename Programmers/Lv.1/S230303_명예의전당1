@@ -1,0 +1,61 @@
+package Programmers.Lv1;
+
+import java.util.*;
+
+public class S230303_명예의전당1 {
+
+	public static void main(String[] args) {
+
+		int k = 3;
+		int[] score = { 10, 100, 20, 150, 1, 100, 200 };
+//		System.out.println(Arrays.toString(solution1(k, score)));
+		System.out.println(Arrays.toString(solution2(k, score)));
+
+	}
+
+	public static int[] solution1(int k, int[] score) {
+		int[] answer = new int[score.length];
+		ArrayList<Integer> temp = new ArrayList<Integer>();
+
+		for (int i = 0; i < score.length; i++) {
+			if (temp.size() < k) {
+				temp.add(score[i]);
+				Collections.sort(temp);
+				answer[i] = temp.get(0);
+				continue;
+			}
+			if (temp.size() == k) {
+				int min = temp.get(0);
+				if (min < score[i]) {
+					temp.remove(0);
+					temp.add(score[i]);
+					Collections.sort(temp);
+				}
+				answer[i] = temp.get(0);
+			}
+		}
+
+		return answer;
+	}
+
+	public static int[] solution2(int k, int[] score) {
+		int[] answer = new int[score.length];
+
+		PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+
+		int temp = 0;
+
+		for (int i = 0; i < score.length; i++) {
+
+			priorityQueue.add(score[i]);
+			if (priorityQueue.size() > k) {
+				priorityQueue.poll();
+			}
+
+			answer[i] = priorityQueue.peek();
+		}
+
+		return answer;
+	}
+
+}
