@@ -1,0 +1,35 @@
+package Programmers.Lv1;
+
+import java.util.Arrays;
+
+public class S230325_기사단원의무기 {
+
+	public static void main(String[] args) {
+
+		int number = 5;
+		int limit = 3;
+		int power = 2;
+		System.out.println(solution(number, limit, power));
+
+	}
+
+	public static int solution(int number, int limit, int power) {
+		int[] count = new int[number + 1];
+		for (int i = 1; i <= number; i++) {
+			for (int j = 1; j <= number / i; j++) {
+				count[i * j]++;
+			}
+		}
+		System.out.println(Arrays.toString(count));
+		int answer = 0;
+		for (int i = 1; i <= number; i++) {
+			if (count[i] > limit) {
+				answer += power;
+			} else {
+				answer += count[i];
+			}
+		}
+		return answer;
+	}
+
+}
