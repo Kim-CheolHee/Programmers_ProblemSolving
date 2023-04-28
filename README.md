@@ -1,4 +1,4 @@
-### Hi there 👋👋
+### 프로그래머스 문제 풀이입니다.
 
 <!--
 **Kim-CheolHee/Kim-CheolHee** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
